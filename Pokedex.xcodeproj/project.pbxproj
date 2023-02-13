@@ -8,12 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		49984E75299AA05F0064DD0F /* PokedexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984E74299AA05F0064DD0F /* PokedexApp.swift */; };
-		49984E77299AA05F0064DD0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984E76299AA05F0064DD0F /* ContentView.swift */; };
-		49984E79299AA0600064DD0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49984E78299AA0600064DD0F /* Assets.xcassets */; };
-		49984E7C299AA0600064DD0F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49984E7B299AA0600064DD0F /* Preview Assets.xcassets */; };
 		49984E86299AA0600064DD0F /* PokedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984E85299AA0600064DD0F /* PokedexTests.swift */; };
-		49984E90299AA0600064DD0F /* PokedexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984E8F299AA0600064DD0F /* PokedexUITests.swift */; };
-		49984E92299AA0600064DD0F /* PokedexUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984E91299AA0600064DD0F /* PokedexUITestsLaunchTests.swift */; };
+		49984EA4299AA4BE0064DD0F /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 49984EA3299AA4BE0064DD0F /* Apollo */; };
+		49984EA7299AA5B90064DD0F /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EA6299AA5B90064DD0F /* Apollo.swift */; };
+		49984EBB299AA8C20064DD0F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EAB299AA8C20064DD0F /* ViewExtensions.swift */; };
+		49984EBC299AA8C20064DD0F /* NumberDataTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EAC299AA8C20064DD0F /* NumberDataTypeExtensions.swift */; };
+		49984EBD299AA8C20064DD0F /* UIColor+Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EAD299AA8C20064DD0F /* UIColor+Luminosity.swift */; };
+		49984EBE299AA8C20064DD0F /* CommonMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EAE299AA8C20064DD0F /* CommonMath.swift */; };
+		49984EBF299AA8C20064DD0F /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EAF299AA8C20064DD0F /* UIImage+Extension.swift */; };
+		49984EC0299AA8C20064DD0F /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB0299AA8C20064DD0F /* Bool+Extensions.swift */; };
+		49984EC1299AA8C20064DD0F /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB1299AA8C20064DD0F /* UIApplicationExtension.swift */; };
+		49984EC2299AA8C20064DD0F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB2299AA8C20064DD0F /* StringExtensions.swift */; };
+		49984EC3299AA8C20064DD0F /* SwiftUIAnimationTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB3299AA8C20064DD0F /* SwiftUIAnimationTransitions.swift */; };
+		49984EC4299AA8C20064DD0F /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB4299AA8C20064DD0F /* Optional+Extensions.swift */; };
+		49984EC5299AA8C20064DD0F /* URL+String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB5299AA8C20064DD0F /* URL+String+Extensions.swift */; };
+		49984EC6299AA8C20064DD0F /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB6299AA8C20064DD0F /* UINavigationBar.swift */; };
+		49984EC7299AA8C20064DD0F /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB7299AA8C20064DD0F /* Dictionary+Extensions.swift */; };
+		49984EC8299AA8C20064DD0F /* Path+QuadCurve+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB8299AA8C20064DD0F /* Path+QuadCurve+Extensions.swift */; };
+		49984EC9299AA8C20064DD0F /* Array+Tuple+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EB9299AA8C20064DD0F /* Array+Tuple+Extensions.swift */; };
+		49984ECD299AAA960064DD0F /* ErrorCodeDispatcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984ECB299AAA960064DD0F /* ErrorCodeDispatcherProtocol.swift */; };
+		49984ECE299AAA960064DD0F /* ErrorCodeDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984ECC299AAA960064DD0F /* ErrorCodeDispatcher.swift */; };
+		49984ED7299AAE2E0064DD0F /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 49984ED6299AAE2E0064DD0F /* Queries.graphql */; };
+		49984EDD299AC0540064DD0F /* PokemonSchema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 49984EDC299AC0540064DD0F /* PokemonSchema.graphqls */; };
+		49984EE9299AC1480064DD0F /* PokemonSchema.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EDF299AC1480064DD0F /* PokemonSchema.graphql.swift */; };
+		49984EEA299AC1480064DD0F /* SamplePokeAPIqueryQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EE2299AC1480064DD0F /* SamplePokeAPIqueryQuery.graphql.swift */; };
+		49984EEB299AC1480064DD0F /* Query_root.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EE5299AC1480064DD0F /* Query_root.graphql.swift */; };
+		49984EEC299AC1480064DD0F /* Pokemon_v2_pokemonspecies.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EE6299AC1480064DD0F /* Pokemon_v2_pokemonspecies.graphql.swift */; };
+		49984EED299AC1480064DD0F /* SchemaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EE7299AC1480064DD0F /* SchemaConfiguration.swift */; };
+		49984EEE299AC1480064DD0F /* SchemaMetadata.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49984EE8299AC1480064DD0F /* SchemaMetadata.graphql.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +58,35 @@
 /* Begin PBXFileReference section */
 		49984E71299AA05F0064DD0F /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49984E74299AA05F0064DD0F /* PokedexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexApp.swift; sourceTree = "<group>"; };
-		49984E76299AA05F0064DD0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		49984E78299AA0600064DD0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		49984E7B299AA0600064DD0F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49984E81299AA0600064DD0F /* PokedexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokedexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49984E85299AA0600064DD0F /* PokedexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexTests.swift; sourceTree = "<group>"; };
 		49984E8B299AA0600064DD0F /* PokedexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokedexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49984E8F299AA0600064DD0F /* PokedexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexUITests.swift; sourceTree = "<group>"; };
-		49984E91299AA0600064DD0F /* PokedexUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		49984EA6299AA5B90064DD0F /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
+		49984EAB299AA8C20064DD0F /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		49984EAC299AA8C20064DD0F /* NumberDataTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberDataTypeExtensions.swift; sourceTree = "<group>"; };
+		49984EAD299AA8C20064DD0F /* UIColor+Luminosity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Luminosity.swift"; sourceTree = "<group>"; };
+		49984EAE299AA8C20064DD0F /* CommonMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonMath.swift; sourceTree = "<group>"; };
+		49984EAF299AA8C20064DD0F /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		49984EB0299AA8C20064DD0F /* Bool+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
+		49984EB1299AA8C20064DD0F /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		49984EB2299AA8C20064DD0F /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		49984EB3299AA8C20064DD0F /* SwiftUIAnimationTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIAnimationTransitions.swift; sourceTree = "<group>"; };
+		49984EB4299AA8C20064DD0F /* Optional+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		49984EB5299AA8C20064DD0F /* URL+String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+String+Extensions.swift"; sourceTree = "<group>"; };
+		49984EB6299AA8C20064DD0F /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		49984EB7299AA8C20064DD0F /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		49984EB8299AA8C20064DD0F /* Path+QuadCurve+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Path+QuadCurve+Extensions.swift"; sourceTree = "<group>"; };
+		49984EB9299AA8C20064DD0F /* Array+Tuple+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Tuple+Extensions.swift"; sourceTree = "<group>"; };
+		49984ECB299AAA960064DD0F /* ErrorCodeDispatcherProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCodeDispatcherProtocol.swift; sourceTree = "<group>"; };
+		49984ECC299AAA960064DD0F /* ErrorCodeDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCodeDispatcher.swift; sourceTree = "<group>"; };
+		49984ED6299AAE2E0064DD0F /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
+		49984EDC299AC0540064DD0F /* PokemonSchema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PokemonSchema.graphqls; sourceTree = "<group>"; };
+		49984EDF299AC1480064DD0F /* PokemonSchema.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonSchema.graphql.swift; sourceTree = "<group>"; };
+		49984EE2299AC1480064DD0F /* SamplePokeAPIqueryQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplePokeAPIqueryQuery.graphql.swift; sourceTree = "<group>"; };
+		49984EE5299AC1480064DD0F /* Query_root.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query_root.graphql.swift; sourceTree = "<group>"; };
+		49984EE6299AC1480064DD0F /* Pokemon_v2_pokemonspecies.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon_v2_pokemonspecies.graphql.swift; sourceTree = "<group>"; };
+		49984EE7299AC1480064DD0F /* SchemaConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaConfiguration.swift; sourceTree = "<group>"; };
+		49984EE8299AC1480064DD0F /* SchemaMetadata.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaMetadata.graphql.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49984EA4299AA4BE0064DD0F /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,8 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				49984E73299AA05F0064DD0F /* Pokedex */,
-				49984E84299AA0600064DD0F /* PokedexTests */,
-				49984E8E299AA0600064DD0F /* PokedexUITests */,
 				49984E72299AA05F0064DD0F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,37 +136,156 @@
 		49984E73299AA05F0064DD0F /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				49984E74299AA05F0064DD0F /* PokedexApp.swift */,
-				49984E76299AA05F0064DD0F /* ContentView.swift */,
-				49984E78299AA0600064DD0F /* Assets.xcassets */,
-				49984E7A299AA0600064DD0F /* Preview Content */,
+				49984E9F299AA0730064DD0F /* Testing */,
+				49984E9E299AA06A0064DD0F /* Code */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
 		};
-		49984E7A299AA0600064DD0F /* Preview Content */ = {
+		49984E9E299AA06A0064DD0F /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				49984E7B299AA0600064DD0F /* Preview Assets.xcassets */,
+				49984EA8299AA8B90064DD0F /* Common */,
+				49984EA1299AA1080064DD0F /* Core-Pokedex */,
 			);
-			path = "Preview Content";
+			path = Code;
 			sourceTree = "<group>";
 		};
-		49984E84299AA0600064DD0F /* PokedexTests */ = {
+		49984E9F299AA0730064DD0F /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				49984EA0299AA07A0064DD0F /* Unit Tests */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		49984EA0299AA07A0064DD0F /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
 				49984E85299AA0600064DD0F /* PokedexTests.swift */,
 			);
-			path = PokedexTests;
+			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
-		49984E8E299AA0600064DD0F /* PokedexUITests */ = {
+		49984EA1299AA1080064DD0F /* Core-Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				49984E8F299AA0600064DD0F /* PokedexUITests.swift */,
-				49984E91299AA0600064DD0F /* PokedexUITestsLaunchTests.swift */,
+				49984ED0299AAC8A0064DD0F /* Data Access */,
+				49984ECA299AAA960064DD0F /* Error Management */,
+				49984E74299AA05F0064DD0F /* PokedexApp.swift */,
 			);
-			path = PokedexUITests;
+			path = "Core-Pokedex";
+			sourceTree = "<group>";
+		};
+		49984EA8299AA8B90064DD0F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				49984EA9299AA8C20064DD0F /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		49984EA9299AA8C20064DD0F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49984EAB299AA8C20064DD0F /* ViewExtensions.swift */,
+				49984EAC299AA8C20064DD0F /* NumberDataTypeExtensions.swift */,
+				49984EAD299AA8C20064DD0F /* UIColor+Luminosity.swift */,
+				49984EAE299AA8C20064DD0F /* CommonMath.swift */,
+				49984EAF299AA8C20064DD0F /* UIImage+Extension.swift */,
+				49984EB0299AA8C20064DD0F /* Bool+Extensions.swift */,
+				49984EB1299AA8C20064DD0F /* UIApplicationExtension.swift */,
+				49984EB2299AA8C20064DD0F /* StringExtensions.swift */,
+				49984EB3299AA8C20064DD0F /* SwiftUIAnimationTransitions.swift */,
+				49984EB4299AA8C20064DD0F /* Optional+Extensions.swift */,
+				49984EB5299AA8C20064DD0F /* URL+String+Extensions.swift */,
+				49984EB6299AA8C20064DD0F /* UINavigationBar.swift */,
+				49984EB7299AA8C20064DD0F /* Dictionary+Extensions.swift */,
+				49984EB8299AA8C20064DD0F /* Path+QuadCurve+Extensions.swift */,
+				49984EB9299AA8C20064DD0F /* Array+Tuple+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49984ECA299AAA960064DD0F /* Error Management */ = {
+			isa = PBXGroup;
+			children = (
+				49984ECB299AAA960064DD0F /* ErrorCodeDispatcherProtocol.swift */,
+				49984ECC299AAA960064DD0F /* ErrorCodeDispatcher.swift */,
+			);
+			path = "Error Management";
+			sourceTree = "<group>";
+		};
+		49984ECF299AAB7B0064DD0F /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				49984EDE299AC1480064DD0F /* PokemonSchema */,
+				49984EDC299AC0540064DD0F /* PokemonSchema.graphqls */,
+				49984EA6299AA5B90064DD0F /* Apollo.swift */,
+				49984ED6299AAE2E0064DD0F /* Queries.graphql */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		49984ED0299AAC8A0064DD0F /* Data Access */ = {
+			isa = PBXGroup;
+			children = (
+				49984ED1299AAC9C0064DD0F /* Remote */,
+			);
+			path = "Data Access";
+			sourceTree = "<group>";
+		};
+		49984ED1299AAC9C0064DD0F /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				49984ECF299AAB7B0064DD0F /* GraphQL */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		49984EDE299AC1480064DD0F /* PokemonSchema */ = {
+			isa = PBXGroup;
+			children = (
+				49984EDF299AC1480064DD0F /* PokemonSchema.graphql.swift */,
+				49984EE0299AC1480064DD0F /* Operations */,
+				49984EE3299AC1480064DD0F /* Schema */,
+			);
+			path = PokemonSchema;
+			sourceTree = SOURCE_ROOT;
+		};
+		49984EE0299AC1480064DD0F /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				49984EE1299AC1480064DD0F /* Queries */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		49984EE1299AC1480064DD0F /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				49984EE2299AC1480064DD0F /* SamplePokeAPIqueryQuery.graphql.swift */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		49984EE3299AC1480064DD0F /* Schema */ = {
+			isa = PBXGroup;
+			children = (
+				49984EE4299AC1480064DD0F /* Objects */,
+				49984EE7299AC1480064DD0F /* SchemaConfiguration.swift */,
+				49984EE8299AC1480064DD0F /* SchemaMetadata.graphql.swift */,
+			);
+			path = Schema;
+			sourceTree = "<group>";
+		};
+		49984EE4299AC1480064DD0F /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				49984EE5299AC1480064DD0F /* Query_root.graphql.swift */,
+				49984EE6299AC1480064DD0F /* Pokemon_v2_pokemonspecies.graphql.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +304,9 @@
 			dependencies = (
 			);
 			name = Pokedex;
+			packageProductDependencies = (
+				49984EA3299AA4BE0064DD0F /* Apollo */,
+			);
 			productName = Pokedex;
 			productReference = 49984E71299AA05F0064DD0F /* Pokedex.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +379,9 @@
 				Base,
 			);
 			mainGroup = 49984E68299AA05F0064DD0F;
+			packageReferences = (
+				49984EA2299AA4BE0064DD0F /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 49984E72299AA05F0064DD0F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,8 +398,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49984E7C299AA0600064DD0F /* Preview Assets.xcassets in Resources */,
-				49984E79299AA0600064DD0F /* Assets.xcassets in Resources */,
+				49984EDD299AC0540064DD0F /* PokemonSchema.graphqls in Resources */,
+				49984ED7299AAE2E0064DD0F /* Queries.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +424,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49984E77299AA05F0064DD0F /* ContentView.swift in Sources */,
+				49984ECE299AAA960064DD0F /* ErrorCodeDispatcher.swift in Sources */,
+				49984EE9299AC1480064DD0F /* PokemonSchema.graphql.swift in Sources */,
+				49984EEC299AC1480064DD0F /* Pokemon_v2_pokemonspecies.graphql.swift in Sources */,
+				49984EA7299AA5B90064DD0F /* Apollo.swift in Sources */,
+				49984EC9299AA8C20064DD0F /* Array+Tuple+Extensions.swift in Sources */,
+				49984EC1299AA8C20064DD0F /* UIApplicationExtension.swift in Sources */,
+				49984EC4299AA8C20064DD0F /* Optional+Extensions.swift in Sources */,
+				49984EBB299AA8C20064DD0F /* ViewExtensions.swift in Sources */,
+				49984EBF299AA8C20064DD0F /* UIImage+Extension.swift in Sources */,
+				49984EED299AC1480064DD0F /* SchemaConfiguration.swift in Sources */,
+				49984EBC299AA8C20064DD0F /* NumberDataTypeExtensions.swift in Sources */,
+				49984EC7299AA8C20064DD0F /* Dictionary+Extensions.swift in Sources */,
+				49984ECD299AAA960064DD0F /* ErrorCodeDispatcherProtocol.swift in Sources */,
+				49984EC2299AA8C20064DD0F /* StringExtensions.swift in Sources */,
+				49984EBD299AA8C20064DD0F /* UIColor+Luminosity.swift in Sources */,
+				49984EC6299AA8C20064DD0F /* UINavigationBar.swift in Sources */,
+				49984EBE299AA8C20064DD0F /* CommonMath.swift in Sources */,
+				49984EC5299AA8C20064DD0F /* URL+String+Extensions.swift in Sources */,
+				49984EEB299AC1480064DD0F /* Query_root.graphql.swift in Sources */,
+				49984EEE299AC1480064DD0F /* SchemaMetadata.graphql.swift in Sources */,
+				49984EC8299AA8C20064DD0F /* Path+QuadCurve+Extensions.swift in Sources */,
+				49984EEA299AC1480064DD0F /* SamplePokeAPIqueryQuery.graphql.swift in Sources */,
 				49984E75299AA05F0064DD0F /* PokedexApp.swift in Sources */,
+				49984EC0299AA8C20064DD0F /* Bool+Extensions.swift in Sources */,
+				49984EC3299AA8C20064DD0F /* SwiftUIAnimationTransitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +464,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49984E90299AA0600064DD0F /* PokedexUITests.swift in Sources */,
-				49984E92299AA0600064DD0F /* PokedexUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +604,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Pokedex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2JMR3SJGS4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -432,9 +619,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JCDev.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -445,7 +635,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Pokedex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2JMR3SJGS4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -461,9 +650,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JCDev.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -583,6 +775,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		49984EA2299AA4BE0064DD0F /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		49984EA3299AA4BE0064DD0F /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49984EA2299AA4BE0064DD0F /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49984E69299AA05F0064DD0F /* Project object */;
 }

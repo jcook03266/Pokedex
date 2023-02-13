@@ -11,7 +11,16 @@ import SwiftUI
 struct PokedexApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                
+            }
+            .onAppear {
+                onLoadTasks()
+            }
         }
+    }
+    
+    func onLoadTasks() {
+        Apollo().loadData()
     }
 }

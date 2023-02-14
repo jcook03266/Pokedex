@@ -17,8 +17,18 @@ struct MainScreen: View {
 }
 
 struct MainScreen_Previews: PreviewProvider {
+    static func getModel() -> MainScreenViewModel {
+        let coordinator: MainCoordinator = RootCoordinatorDispatcher(delegate: .shared).getRootCoordinatorFor(root: .mainCoordinator) as! MainCoordinator
+        
+        let model = coordinator
+            .router
+            .mainScreenViewModel!
+        
+        return model
+    }
+    
     static var previews: some View {
         MainScreen(model:
-                .init(coordinator: .init()))
+              getModel())
     }
 }

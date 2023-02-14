@@ -1,5 +1,5 @@
 # For detail views since it contains extensive Pokemon information
-query getStatsForPokemon($id: Int = 10) {
+query getStatsForPokemon($id: Int) {
   pokemon: pokemon_v2_pokemon(where: {id: {_eq: $id}}) {
     # Metadata
     name

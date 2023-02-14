@@ -21,4 +21,9 @@ extension InjectableServices {
     static func inject() -> PokedexApolloService {
         return .shared
     }
+    
+    // MARK: - Apollo GraphQL Service Adapter
+    static func inject() -> ApolloGraphQLServiceAdapter {
+        return .init()
+    }
 }

@@ -6,15 +6,15 @@ pokemon: pokemon_v2_pokemon(order_by: {id: asc}) {
     id
     
     # Pokemon Type(s)
-    pokemon_v2_pokemontypes {
+    types: pokemon_v2_pokemontypes {
       pokemon_v2_type {
-        name
+        pokemonType: name
       }
     }
 
     # Color info
-    pokemon_v2_pokemonspecy {
-      pokemon_color_id
+    speciesColorID: pokemon_v2_pokemonspecy {
+      id: pokemon_color_id
     }
 }
 }

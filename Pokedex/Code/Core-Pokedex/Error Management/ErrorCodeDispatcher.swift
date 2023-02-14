@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Apollo
 
 struct ErrorCodeDispatcher: ErrorCodeDispatcherProtocol {
     // MARK: - Supported Error Domains
@@ -18,7 +19,7 @@ struct ErrorCodeDispatcher: ErrorCodeDispatcherProtocol {
     struct CoreDataErrors {}
     struct DeeplinkingErrors {}
     struct KeychainErrors {}
-    struct AuthenticationErrors {}
+    struct GraphQLErrors {}
     
     // MARK: - Global state management
     static var fatalErrorsEnabled: Bool {
@@ -56,38 +57,29 @@ struct ErrorCodeDispatcher: ErrorCodeDispatcherProtocol {
     }
 }
 
-// MARK: - Authentication Error Codes
-extension ErrorCodeDispatcher.AuthenticationErrors: ThrowableErrorCodeDispatcherProtocol {
+// MARK: - Error Codes for GraphQL
+extension ErrorCodeDispatcher.GraphQLErrors: ThrowableErrorCodeDispatcherProtocol {
     typealias ErrorCodes = codes
     
     enum codes: Hashable, LocalizedError {
-        case encryptionFailed
-        case decryptionFailed
-        case userDoesNotExist
-        case userPasswordDoesNotExist
-        case lastUsedSaltNotFound
-        case faceIDAuthNotPossible(error: String)
+        case resultHandlingError(operation: any GraphQLOperation,
+                                 errors: [String])
         
         var errorDescription: String? {
             switch self {
-            case .encryptionFailed:
-                return "The passcode encryption algorithm failed, please diagnose the issue immediately!"
-                
-            case .decryptionFailed:
-                return "The passcode decryption algorithm failed, please diagnose the issue immediately!"
-                
-            case .userDoesNotExist:
-                return "An active user is required to perform this operation!"
-                
-            case .userPasswordDoesNotExist:
-                return "A password could not be loaded for the current user, please diagnose the issue!"
-                
-            case .lastUsedSaltNotFound:
-                return "The last salt used for encrypting the user's passcode was not found, please diagnose the issue and fix this."
-                
-            case .faceIDAuthNotPossible(error: let error):
-                return "The user cannot use faceID to login at this present moment, the process resulted in the following error \(error)"
+            case .resultHandlingError(operation: let operation,
+                                      errors: let errors):
+                return "An error was encountered handling the given GraphQL Operation \(operation.self), errors: \(errors.description)"
             }
+        }
+        
+        // MARK: - Protocol Conformance
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(self.hashValue)
+        }
+        
+        static func == (lhs: ErrorCodeDispatcher.GraphQLErrors.codes, rhs: ErrorCodeDispatcher.GraphQLErrors.codes) -> Bool {
+            return lhs.hashValue == rhs.hashValue
         }
     }
     

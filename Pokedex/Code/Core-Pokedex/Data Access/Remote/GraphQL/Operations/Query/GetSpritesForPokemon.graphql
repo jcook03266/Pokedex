@@ -1,0 +1,6 @@
+# For one time use by the app, just plug in the pokemon's id to get other photos dynamically
+query getSpritesForPokemon($id: Int = 1) {
+  pokemonSprites: pokemon_v2_pokemonsprites(where: {id: {_eq: $id}}) {
+    sprites
+  }
+}

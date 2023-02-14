@@ -1,0 +1,20 @@
+# Gets all Pokemons
+# For use in the main list view since it contains brief info about the pokemon
+query getAllPokemon {
+pokemon: pokemon_v2_pokemon(order_by: {id: asc}) {
+    name
+    id
+    
+    # Pokemon Type(s)
+    pokemon_v2_pokemontypes {
+      pokemon_v2_type {
+        name
+      }
+    }
+
+    # Color info
+    pokemon_v2_pokemonspecy {
+      pokemon_color_id
+    }
+}
+}

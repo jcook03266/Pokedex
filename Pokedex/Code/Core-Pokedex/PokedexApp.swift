@@ -21,6 +21,6 @@ struct PokedexApp: App {
     }
     
     func onLoadTasks() {
-        Apollo().loadData()
+        PokedexApolloService.shared.loadData()
     }
 }

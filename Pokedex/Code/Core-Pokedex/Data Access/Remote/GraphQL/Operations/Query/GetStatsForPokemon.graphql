@@ -1,0 +1,45 @@
+# For detail views since it contains extensive Pokemon information
+query getStatsForPokemon($id: Int = 10) {
+  pokemon: pokemon_v2_pokemon(where: {id: {_eq: $id}}) {
+    # Metadata
+    name
+    id
+    height
+    weight
+
+    # Species Type | Gender Rate of females (in eights i.e 1 = 1/8 12.5% female 87.5% male, 8 = 8/8 100% female )
+    pokemon_v2_pokemonspecy {
+      name
+      gender_rate
+      pokemon_color_id
+
+      pokemon_v2_pokemonegggroups {
+        pokemon_v2_egggroup {
+          name
+        }
+      }
+    }
+
+    # Abilities
+    pokemon_v2_pokemonabilities {
+       pokemon_v2_ability {
+         name
+       }
+    }
+
+    # Statistics
+    pokemon_v2_pokemonstats {
+      pokemon_v2_stat {
+        name
+      }
+      base_stat
+    }
+
+    # Pokemon Type(s)
+    pokemon_v2_pokemontypes {
+      pokemon_v2_type {
+        name
+      }
+    }
+  }
+}

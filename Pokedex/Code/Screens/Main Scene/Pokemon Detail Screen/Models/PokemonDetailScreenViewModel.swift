@@ -23,8 +23,9 @@ class PokemonDetailScreenViewModel: GenericViewModel {
     @Published var detailedSelectedPokemon: DetailedPokemonModel? = nil
     @Published var selectedPokemon: MinimalPokemonModel
     
-    // MARK: - Subscription
-    var cancellables: Set<AnyCancellable> = []
+    // MARK: - Subscriptions
+    private var cancellables: Set<AnyCancellable> = []
+    private let scheduler: DispatchQueue = DispatchQueue.main
     
     // MARK: - Helpers
     var unitHelpers: HelperManager = .init()
@@ -243,6 +244,7 @@ infoSectionFontWeight: Font.Weight = .semibold,
     func addSubscribers() {
         self.router
             .$currentlySelectedPokemon
+            .receive(on: scheduler)
             .sink { [weak self] in
                 guard let self = self,
                       let pokemon = $0
@@ -254,12 +256,21 @@ infoSectionFontWeight: Font.Weight = .semibold,
             .store(in: &cancellables)
     }
     
+    // MARK: - Data Acquisition
+    func refresh() {
+        getSelectedPokemonData()
+    }
+    
     private func getSelectedPokemonData() {
-        pokemonDataStore.getDetailedPokemonModel(with: pokemonID) { [weak self] in
+        pokemonDataStore
+            .getDetailedPokemonModel(with: pokemonID)
+        { [weak self] pokemon in
             guard let self = self
             else { return }
             
-            self.detailedSelectedPokemon = $0
+            DispatchQueue.main.async {
+                self.detailedSelectedPokemon = pokemon
+            }
         }
     }
 }

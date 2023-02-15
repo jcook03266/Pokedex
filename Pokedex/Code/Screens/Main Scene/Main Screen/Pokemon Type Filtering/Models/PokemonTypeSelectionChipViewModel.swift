@@ -30,7 +30,7 @@ class PokemonTypeSelectionChipViewModel: GenericViewModel, Hashable, Equatable {
     
     // Fonts
     let font: FontRepository = .body_XS,
-        fontWeight: Font.Weight = .regular
+        fontWeight: Font.Weight = .semibold
     
     // MARK: - Protocol Conformance
     static func == (lhs: PokemonTypeSelectionChipViewModel,

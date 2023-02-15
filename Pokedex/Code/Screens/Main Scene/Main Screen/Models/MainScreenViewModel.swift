@@ -98,6 +98,7 @@ class MainScreenViewModel: GenericViewModel {
         searchTextFieldModel = .init()
         searchTextFieldModel.configurator { model in
             model.title = "Search Bar"
+            model.borderColor = Colors.black_45.0
             model.sheatheColor = PokemonColors.randomColor
             model.iconColor = Colors.permanent_white.0
             model.textColor = Colors.permanent_white.0
@@ -106,13 +107,19 @@ class MainScreenViewModel: GenericViewModel {
             model.placeholderText = "Pikachu I Choose You!"
             model.icon = Icons.getIconImage(named: .magnifyingglass)
             model.keyboardType = .asciiCapable
-            model.textContentType = .name
+            model.textContentType = .nickname
             model.submitLabel = .search
             
             model.inFieldButtonIconTint = model.sheatheColor
             model.inFieldButtonIcon = Icons.getIconImage(named: .arrow_counterclockwise)
-            model.inFieldButtonAction = {
+            model.inFieldButtonAction = { [weak self] in
+                guard let self = self
+                else { return }
+                
                 model.textEntry.clear()
+                self.dataStores
+                    .pokemonDataStore
+                    .activeSearchQuery.clear()
             }
             
             model.onSubmitAction = {

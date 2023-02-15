@@ -57,6 +57,7 @@
 		49AB5942299D71170016D76A /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB5940299D71170016D76A /* CornerRadius.swift */; };
 		49AB5945299D8E780016D76A /* BaseStatProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB5944299D8E780016D76A /* BaseStatProgressView.swift */; };
 		49AB5948299D938B0016D76A /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB5947299D938B0016D76A /* ButtonStyles.swift */; };
+		49AB594B299D9A320016D76A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49AB594A299D9A320016D76A /* Launch Screen.storyboard */; };
 		49EF2DD9299B0DFF00194CAF /* GetAllPokemon.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 49EF2DD8299B0DFF00194CAF /* GetAllPokemon.graphql */; };
 		49EF2DDB299B0E2B00194CAF /* GetSpritesForPokemon.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 49EF2DDA299B0E2B00194CAF /* GetSpritesForPokemon.graphql */; };
 		49EF2DDD299B0E5000194CAF /* GetStatsForPokemon.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 49EF2DDC299B0E5000194CAF /* GetStatsForPokemon.graphql */; };
@@ -183,6 +184,7 @@
 		49AB5940299D71170016D76A /* CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		49AB5944299D8E780016D76A /* BaseStatProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStatProgressView.swift; sourceTree = "<group>"; };
 		49AB5947299D938B0016D76A /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		49AB594A299D9A320016D76A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		49EF2DD8299B0DFF00194CAF /* GetAllPokemon.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetAllPokemon.graphql; sourceTree = "<group>"; };
 		49EF2DDA299B0E2B00194CAF /* GetSpritesForPokemon.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetSpritesForPokemon.graphql; sourceTree = "<group>"; };
 		49EF2DDC299B0E5000194CAF /* GetStatsForPokemon.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetStatsForPokemon.graphql; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		49984E73299AA05F0064DD0F /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				49AB5949299D9A1F0016D76A /* Supporting Files */,
 				49984E9F299AA0730064DD0F /* Testing */,
 				49984E9E299AA06A0064DD0F /* Code */,
 			);
@@ -772,6 +775,14 @@
 				49AB5947299D938B0016D76A /* ButtonStyles.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		49AB5949299D9A1F0016D76A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49AB594A299D9A320016D76A /* Launch Screen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		49EF2E30299B138A00194CAF /* Business Logic */ = {
@@ -1279,6 +1290,7 @@
 			files = (
 				49A5D59E299C2BD800AC2860 /* Localizable.strings in Resources */,
 				49A5D59F299C2BD800AC2860 /* Colors.xcassets in Resources */,
+				49AB594B299D9A320016D76A /* Launch Screen.storyboard in Resources */,
 				49A5D5A0299C2BD800AC2860 /* Images.xcassets in Resources */,
 				49984EDD299AC0540064DD0F /* PokemonSchema.graphqls in Resources */,
 				49EF2DD9299B0DFF00194CAF /* GetAllPokemon.graphql in Resources */,
@@ -1573,6 +1585,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1609,6 +1622,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

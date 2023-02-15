@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Shimmer
 
 struct PokemonDetailScreen: View {
     // MARK: - Observed
@@ -44,7 +45,18 @@ struct PokemonDetailScreen: View {
     }
     
     var body: some View {
-        mainSection
+        Group {
+            if model.isLoaded {
+                mainSection
+            }
+            else {
+                mainSection
+                    .redacted(reason: .placeholder)
+                    .shimmering()
+            }
+        }
+        .animation(.spring(),
+                   value: model.isLoaded)
     }
 }
 
@@ -58,6 +70,9 @@ extension PokemonDetailScreen {
                     bottomSection
                     topSection
                 }
+            }
+            .refreshable {
+                model.refresh()
             }
             backButton
         }

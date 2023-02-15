@@ -33,7 +33,12 @@ struct PokemonGridView: View {
                 topPokemonOrderPadding: CGFloat = 10
     
     var body: some View {
-        mainSection
+        Button {
+            model.action()
+        } label: {
+            mainSection
+        }
+        .buttonStyle(.genericSpringyShrink)
     }
 }
 

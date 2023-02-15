@@ -18,7 +18,7 @@ class MainRouter: Routable {
     
     // MARK: - Published
     /// Used by the detail view to determine which pokemon to display in full detail
-    @Published var currentlySelectedPokemonID: Int? = nil
+    @Published var currentlySelectedPokemon: MinimalPokemonModel? = nil
     
     // MARK: - Observed
     @ObservedObject var coordinator: MainCoordinator

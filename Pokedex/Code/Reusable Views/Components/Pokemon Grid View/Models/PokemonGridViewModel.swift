@@ -76,6 +76,18 @@ orderTextColor: Color = Colors.black_45.0,
         return minimalPokemonModel.element
     }
     
+    // MARK: - Actions
+    /// Trigger the detail view on tap
+    var action: (() -> Void) {
+        return { [weak self] in
+            guard let self = self
+            else { return }
+            
+            self.router.currentlySelectedPokemon = self.minimalPokemonModel
+            self.router.coordinator.presentFullScreenCover(with: .detailView)
+        }
+    }
+    
     init(router: MainRouter,
          pokemon: MinimalPokemonModel)
     {

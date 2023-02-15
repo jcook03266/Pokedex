@@ -70,6 +70,12 @@ class PokemonDataStore: ObservableObject {
             .reload()
     }
     
+    func getMinimalPokemonWith(id: Int) -> MinimalPokemonModel? {
+        return self
+            .minimalPokemonModels
+            .first(where: { $0.element.id == id })
+    }
+    
     func getDetailedPokemonModel(with id: Int,
                                  completion: @escaping ((DetailedPokemonModel?) -> Void))
     {

@@ -73,6 +73,7 @@ struct PokemonTypeSelectionChipView: View {
                 textView
             }
         }
+        .buttonStyle(.genericSpringyShrink)
         .frame(width: size.width,
                height: size.height)
     }

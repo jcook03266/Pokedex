@@ -23,7 +23,9 @@ class PokemonDataProvider: ObservableObject {
     }
     let dependencies = Dependencies()
     
-    private init() {}
+    private init() {
+        setup()
+    }
     
     func setup() {
         load()
@@ -41,22 +43,30 @@ class PokemonDataProvider: ObservableObject {
     func fetchStatsForPokemon(pokemonID: Int,
                               completion: @escaping ((DetailedPokemonModel?) -> Void))
     {
-        dependencies
-            .apolloGQLServiceAdapter
-            .performGetStatsForPokemonQuery(pokemonID: pokemonID) {
-                completion($0)
+        Task(priority: .background) {
+            do {
+                dependencies
+                    .apolloGQLServiceAdapter
+                    .performGetStatsForPokemonQuery(pokemonID: pokemonID) {
+                        completion($0)
+                    }
             }
+        }
     }
     
     // MARK: - Fetching transformed models from Apollo GQL Service Adapter
     func fetchAllPokemon() {
-        dependencies
-            .apolloGQLServiceAdapter
-            .performGetAllPokemonQuery { [weak self] in
-                guard let self = self
-                else { return }
-                
-                self.minimalPokemonModels = $0
+        Task(priority: .background) {
+            do {
+                dependencies
+                    .apolloGQLServiceAdapter
+                    .performGetAllPokemonQuery { [weak self] in
+                        guard let self = self
+                        else { return }
+                        
+                        self.minimalPokemonModels = $0
+                    }
             }
+        }
     }
 }

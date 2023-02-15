@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Pokedex
+
+  Created by Justin Cook on 2/14/23.
+  
+*/
+
+// MARK: - App Specific:
+"APP_NAME" = "Pokedex";
+
+// MARK: - Other
+

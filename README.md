@@ -42,7 +42,7 @@ The app uses a staggered tier system for displaying Pokemon data, with the main 
 -> Things to note:
 * Some of the sprite images for Pokemons with order numbers in the 1000s aren't available, and this is due to them being missing from Poke API's image source directory.
  
-* The GQL call in the beginning blocks the UI momentarily, this can be optimized in the future by probably isolating the two thread intensive operations from each other by a factor of time instead of doing them in parallel when the app first launches; which might be causing a sort of race condition for memory access between threads.
+* The GQL call in the beginning blocks the UI momentarily, this can be optimized in the future by probably isolating the two thread intensive operations from each other by a factor of time instead of doing them in parallel when the app first launches; which might be causing a sort of race condition for memory access between threads. I can explore possibly integrating actor types for specific classes to better manage thread access.
  
 ## Takeaways from this project:
 - Objective-C is a pretty versatile language and can be combined with Swift out of the box, and this is a great trait because a lot of legacy codebases need upgrades, but the possibility of breaking changes and constant QA would prevent that from happening; the interoperability between these two languages destroys that barrier and allows for modularity. I was able to integrate some Objective-C classes and interface with Swift without breaking a sweat, and these classes do their job just fine, no drawbacks or anything, and this just shows the power the language still has even in this modern ecosystem.

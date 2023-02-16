@@ -22,10 +22,10 @@ struct BaseStatProgressView: View {
     
     // MARK: - Styling
     var barColor: Color {
-        if progress <= 30 {
+        if totalProgressRatio <= 0.3 {
             return Colors.getColor(named: .pokemon_red)
         }
-        else if progress <= 60 {
+        else if totalProgressRatio <= 0.6 {
             return Colors.getColor(named: .pokemon_brown)
         }
         else {

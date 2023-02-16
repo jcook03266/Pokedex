@@ -30,12 +30,12 @@ enum PokemonType: String, Codable, CaseIterable {
 }
 
 enum PokemonStats: String, Codable, CaseIterable {
+    case hp
+    case attack
     case defense
     case special_attack  = "special-attack"
     case special_defense  = "special-defense"
-    case attack  = "attack"
-    case hp  = "hp"
-    case speed  = "speed"
+    case speed
 }
 
 enum PokemonColors: Int, Codable {

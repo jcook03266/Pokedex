@@ -117,9 +117,7 @@ class MainScreenViewModel: GenericViewModel {
                 else { return }
                 
                 model.textEntry.clear()
-                self.dataStores
-                    .pokemonDataStore
-                    .activeSearchQuery.clear()
+                self.isSearching = false
             }
             
             model.onSubmitAction = {

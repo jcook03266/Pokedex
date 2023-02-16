@@ -22,7 +22,6 @@ struct PokemonImageView: View {
                     .resizable()
                     .renderingMode(.original)
                     .aspectRatio(contentMode: .fit)
-                    .scaledToFit()
                     .transition(.scale)
             }
         }

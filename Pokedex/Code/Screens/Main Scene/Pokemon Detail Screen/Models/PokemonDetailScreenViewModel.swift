@@ -162,6 +162,23 @@ infoSectionFontWeight: Font.Weight = .semibold,
     }
     
     // MARK: - Base Stats
+    func getStatFor(pokemonStat: PokemonStats) -> Int {
+        switch pokemonStat {
+        case .defense:
+            return pokemonDefense
+        case .special_attack:
+            return pokemonSpecialAttack
+        case .special_defense:
+            return pokemonSpecialDefense
+        case .attack:
+            return pokemonAttack
+        case .hp:
+            return pokemonHP
+        case .speed:
+            return pokemonSpeed
+        }
+    }
+    
     var pokemonStats: [PokemonStats : Int] {
         let stats = pokemon?
             .pokemon_v2_pokemonstats
@@ -218,8 +235,10 @@ infoSectionFontWeight: Font.Weight = .semibold,
         return lessDetailedPokemon.id
     }
     
+    /// If the pokemon is not nil and it matches the low detail pokemon currently selected by the router then it has been loaded successfully,
+    /// used for lazy loading to prevent unrelated / mock data from being shown
     var isLoaded: Bool {
-        return pokemon != nil
+        return pokemon != nil && pokemon?.name == lessDetailedPokemon.name
     }
     
     // MARK: - Actions

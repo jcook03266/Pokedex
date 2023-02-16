@@ -27,7 +27,7 @@ The app uses a staggered tier system for displaying Pokemon data, with the main 
 * The revolving FIFO model cache is for added memory management and UX since it allows a user to access past Pokemon data even when they're not online, and it keeps the RAM usage low which allows the app to be very performant.
  
 ### Loading and Streaming
-* Lazy loading is used for both the main screen and detail views to give the user access to the UI while things load, it's a much better approach than blocking them from using the app entirely if an internet connection isn't readily available. But, if a user gets an internet connection after launching the app then can just refresh either screen to re-fetch the respective data they need to view.
+* Lazy loading is used for both the main screen and detail views to give the user access to the UI while things load, it's a much better approach than blocking them from using the app entirely if an internet connection isn't readily available. But, if a user gets an internet connection after launching the app then they can just refresh either screen to re-fetch the respective data they need to view.
  
 * Combine was used for streaming pokemon data to each screen from the data provider and data store. And it was through publisher subscriptions that filtering was greatly simplified as you can just attach a map operation to a subscriber and filter the publisher's stream through whatever criteria you want. This made implementing the search bar super simple and versatile as the user can search up colors, names, numbers, and types and get whatever Pokemon they want based off of text alone.
  

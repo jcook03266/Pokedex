@@ -40,12 +40,24 @@ https://pokeapi.co/
 * SwiftUI-Shimmer
 * Apollo-iOS
 
+## Supported Orientations:
+* Landscape
+* Portrait
+
+## Supported Platforms:
+* iOS
+* iPadOS
+
 </div>
 
 <div align="center">
 
-## Demo:
+## Portrait Demo:
 
 https://user-images.githubusercontent.com/63657230/219216667-f1dafdbf-d1b9-4f0e-a719-b3bc36895d3f.mp4
+
+## Landscape Mode Demo:
+
+https://user-images.githubusercontent.com/63657230/219472859-9880312c-7e5c-411c-88e2-cfffe8bd7b9e.mp4
 
 </div>

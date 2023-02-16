@@ -50,6 +50,13 @@ The app uses a staggered tier system for displaying Pokemon data, with the main 
 - GraphQL is really cool, but one hassle is specifying typealiases to get around the giant type chains when you want to access a data model tied to a query or mutation. It's useful but takes away from the usual setup of specifying your own data models and having control over them as the GQL type models have immutable properties.
  
 - SwiftUI has really matured to the point where defining custom UIViews to handle niche user interactions isn't necessary anymore. I would've liked to include a UIView, or a storyboard view, but doing so would've required more boilerplate and just wouldn't interface well with the reactive UI I set out to create, optimize, and maintain. 
+ 
+## Front-end:
+* SwiftUI
+* Storyboard (Launch Screen)
+ 
+## Backend:
+* GraphQL
 
 ## Design Patterns Used:
 * Coordinator
@@ -90,5 +97,7 @@ https://user-images.githubusercontent.com/63657230/219216667-f1dafdbf-d1b9-4f0e-
 
 https://user-images.githubusercontent.com/63657230/219472859-9880312c-7e5c-411c-88e2-cfffe8bd7b9e.mp4
 
-Thanks for reading, check out more of my repos for more code and design ideas!
+
+ 
+### Thanks for reading, check out more of my repos for more code and design ideas!
 </div>

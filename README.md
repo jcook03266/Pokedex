@@ -31,6 +31,7 @@ https://pokeapi.co/
 * Data Store
 * Manager
 * Singleton
+* Adapter
 * Protocol
 
 ## Libraries Used:

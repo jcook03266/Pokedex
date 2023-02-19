@@ -60,9 +60,17 @@ static const float ft2InchConversionFactor = 12.00;
     float totalInches = [self convertFeetToInches:(ftLength)];
     
     float remainingInches = fmodf(totalInches, ft2InchConversionFactor);
-    float remainingFeet =  ftLength - [self convertInchesToFeet:remainingInches];
     
-    return [NSString stringWithFormat:@"%.0f'%.0f\"", remainingFeet, remainingInches];
+    /// i.e) 1.5 % 1 = 0.5, 1.5 - 0.5 = 1
+    float remainingFeet =  ftLength - fmodf(ftLength, 1);
+    
+    // Only display floating points when needed
+    if (fmodf(remainingInches, ft2InchConversionFactor) > 0) {
+        return [NSString stringWithFormat:@"%.0f'%.2f\"", remainingFeet, remainingInches];
+    }
+    else {
+        return [NSString stringWithFormat:@"%.0f'%.0f\"", remainingFeet, remainingInches];
+    }
 }
 
 - (NSString *)convertCmToFeetFormattedString:(float)cmLength {

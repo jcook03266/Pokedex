@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Shimmer
 
 struct PokemonDetailScreen: View {
     // MARK: - Observed
@@ -44,7 +45,18 @@ struct PokemonDetailScreen: View {
     }
     
     var body: some View {
-        mainSection
+        Group {
+            if model.isLoaded {
+                mainSection
+            }
+            else {
+                mainSection
+                    .redacted(reason: .placeholder)
+                    .shimmering()
+            }
+        }
+        .animation(.spring(),
+                   value: model.isLoaded)
     }
 }
 
@@ -58,6 +70,9 @@ extension PokemonDetailScreen {
                     bottomSection
                     topSection
                 }
+            }
+            .refreshable {
+                model.refresh()
             }
             backButton
         }
@@ -79,19 +94,19 @@ extension PokemonDetailScreen {
     
     var topSection: some View {
         ZStack {
-            
             VStack(alignment: .center) {
                     HStack {
                         VStack {
                             pokemonNameTextView
                             pokemonTypesList
                         }
-                        pokemonOrderTextView
                         Spacer()
+                        pokemonOrderTextView
                     }
                     .padding(.top, topSectionTopPadding)
                 .padding(.leading,
                          topSectionLeadingPadding)
+                .zIndex(5)
                 
                 pokemonImage
                 
@@ -149,65 +164,15 @@ extension PokemonDetailScreen {
     }
     
     var aboutSection: some View {
-        HStack (alignment: .center, spacing: 80) {
-            VStack(alignment: .leading,
-                   spacing: 20) {
-                Text("Species")
-                Text("Height")
-                Text("Weight")
-                Text("Abilities")
-            }
-            .withFont(model.infoSectionHeaderFont)
-            .multilineTextAlignment(.center)
-            .lineLimit(1)
-            .minimumScaleFactor(0.5)
-            .foregroundColor(model.infoSectionHeaderTextColor)
-            
-            VStack(alignment: .leading,
-                   spacing: 20) {
-                Text(model.pokemonSpecies)
-                Text(model.pokemonHeight)
-                Text(model.pokemonWeight)
-                Text(model.pokemonAbilities)
-            }
-            .withFont(model.infoSectionFont)
-            .fontWeight(model.infoSectionFontWeight)
-            .multilineTextAlignment(.center)
-            .lineLimit(1)
-            .minimumScaleFactor(0.5)
-            .foregroundColor(model.infoSectionTextColor)
-            
-            Spacer()
-        }
-        .padding(.leading,
-                 infoSectionLeadingPadding)
-    }
-    
-    var baseStatsSection: some View {
-        VStack {
-            HStack {
-                Text("Base Stats")
-                    .withFont(model.infoSectionTitleFont)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.5)
-                    .foregroundColor(model.infoSectionTitleFontColor)
-             Spacer()
-            }
-            .padding(.leading,
-                     infoSectionLeadingPadding)
-            .padding(.bottom, 10)
-            
-            HStack (alignment: .center, spacing: 20) {
+        ScrollView(.horizontal,
+                   showsIndicators: false) {
+            HStack (alignment: .center, spacing: 50) {
                 VStack(alignment: .leading,
                        spacing: 20) {
-                    Text(PokemonStats.hp.rawValue.uppercased())
-                    Text(PokemonStats.attack.rawValue.capitalized)
-                    Text(PokemonStats.defense.rawValue.capitalized)
-                    Text(PokemonStats.special_attack.rawValue.capitalized)
-                    Text(PokemonStats.special_defense.rawValue.capitalized)
-                    Text(PokemonStats.speed.rawValue.capitalized)
-                    Text("Total")
+                    Text("Species")
+                    Text("Height")
+                    Text("Weight")
+                    Text("Abilities")
                 }
                        .withFont(model.infoSectionHeaderFont)
                        .multilineTextAlignment(.center)
@@ -219,65 +184,90 @@ extension PokemonDetailScreen {
                 
                 VStack(alignment: .leading,
                        spacing: 20) {
-                    HStack {
-                        Text(String(model.pokemonHP))
-                        BaseStatProgressView(progress: Double(model.pokemonHP),
-                                             maxProgressAmount: 100)
-                        .padding(.leading, 10)
-                    }
-                    
-                    HStack {
-                        Text(String(model.pokemonAttack))
-                        BaseStatProgressView(progress: Double(model.pokemonAttack),
-                                             maxProgressAmount: 100)
-                        .padding(.leading, 10)
-                    }
-                    
-                    HStack {
-                        Text(String(model.pokemonDefense))
-                        BaseStatProgressView(progress: Double(model.pokemonDefense),
-                                             maxProgressAmount: 100)
-                        .padding(.leading, 10)
-                    }
-                    
-                    HStack {
-                        Text(String(model.pokemonSpecialAttack))
-                        BaseStatProgressView(progress: Double(model.pokemonSpecialAttack),
-                                             maxProgressAmount: 100)
-                        .padding(.leading, 10)
-                    }
-                    
-                    HStack {
-                        Text(String(model.pokemonSpecialDefense))
-                        BaseStatProgressView(progress: Double(model.pokemonSpecialDefense),
-                                             maxProgressAmount: 100)
-                        .padding(.leading, 10)
-                    }
-                    
-                    HStack {
-                        Text(String(model.pokemonSpeed))
-                        BaseStatProgressView(progress: Double(model.pokemonSpeed),
-                                             maxProgressAmount: 100)
-                        .padding(.leading, 10)
-                    }
-                    
-                    HStack {
-                        Text(String(model.pokemonStatsTotal))
-                        BaseStatProgressView(progress: Double(model.pokemonStatsTotal),
-                                             maxProgressAmount: 400)
-                        .padding(.leading, 10)
-                    }
+                    Text(model.pokemonSpecies)
+                    Text(model.pokemonHeight)
+                    Text(model.pokemonWeight)
+                    Text(model.pokemonAbilities)
                 }
                        .withFont(model.infoSectionFont)
                        .fontWeight(model.infoSectionFontWeight)
                        .multilineTextAlignment(.center)
                        .lineLimit(1)
-                       .minimumScaleFactor(0.5)
+                       .minimumScaleFactor(1)
                        .foregroundColor(model.infoSectionTextColor)
                 
                 Spacer()
             }
         }
+    }
+    
+    var baseStatsSection: some View {
+        VStack {
+            HStack {
+                Text("Base Stats")
+                    .withFont(model.infoSectionTitleFont)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(1)
+                    .foregroundColor(model.infoSectionTitleFontColor)
+             Spacer()
+            }
+            .padding(.bottom, 10)
+            
+            ForEach(PokemonStats.allCases, id: \.rawValue) { stat in
+                let statBaseValue: Int = model.getStatFor(pokemonStat: stat)
+                   
+                    HStack (alignment: .center,
+                            spacing: 10) {
+                        Group {
+                            Text(stat == .hp ? stat.rawValue.uppercased() : stat.rawValue.capitalized)
+                                .withFont(model.infoSectionHeaderFont)
+                                .foregroundColor(model.infoSectionHeaderTextColor)
+
+                            Text(String(statBaseValue))
+                                .withFont(model.infoSectionFont)
+                                .fontWeight(model.infoSectionFontWeight)
+                                .foregroundColor(model.infoSectionTextColor)
+                        }
+                        .multilineTextAlignment(.center)
+                        .lineLimit(1)
+                        .minimumScaleFactor(1)
+                        
+                        Spacer()
+                        
+                        BaseStatProgressView(progress: Double(statBaseValue),
+                                             maxProgressAmount: 100)
+                    }
+                .padding(.trailing,
+                         infoSectionLeadingPadding)
+                        
+        }
+            
+            HStack (alignment: .center,
+                    spacing: 10) {
+                Group {
+                    Text("Total")
+                        .withFont(model.infoSectionHeaderFont)
+                        .foregroundColor(model.infoSectionHeaderTextColor)
+                    
+                    Text(String(model.pokemonStatsTotal))
+                        .withFont(model.infoSectionFont)
+                        .fontWeight(model.infoSectionFontWeight)
+                        .foregroundColor(model.infoSectionTextColor)
+                }
+                .multilineTextAlignment(.center)
+                .lineLimit(1)
+                .minimumScaleFactor(1)
+                
+                Spacer()
+                
+                BaseStatProgressView(progress: Double(model.pokemonStatsTotal),
+                                     maxProgressAmount: 600)
+            }
+        .padding(.trailing,
+                 infoSectionLeadingPadding)
+        }
+        .padding(.leading,
+                 infoSectionLeadingPadding)
     }
     
     
@@ -303,21 +293,26 @@ extension PokemonDetailScreen {
                 .scaledToFit()
                 .frame(height: pokemonTypePillHeight)
             }
+            
+            Spacer()
         }
     }
     
     var pokemonNameTextView: some View {
-        Text(model.pokemonName)
-            .withFont(model.nameFont)
-            .multilineTextAlignment(.center)
-            .lineLimit(1)
-            .minimumScaleFactor(0.9)
-            .foregroundColor(model.nameTextColor)
+        HStack {
+            Text(model.pokemonName)
+                .withFont(model.nameFont)
+                .multilineTextAlignment(.center)
+                .lineLimit(1)
+                .minimumScaleFactor(0.9)
+                .foregroundColor(model.nameTextColor)
+            
+            Spacer()
+        }
     }
     
     var pokemonOrderTextView: some View {
             HStack {
-                Spacer()
                 Text(model.pokemonIDNumber)
                     .withFont(model.pokemonOrderFont)
                     .multilineTextAlignment(.center)

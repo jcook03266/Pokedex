@@ -43,7 +43,7 @@ class PokemonDataProvider: ObservableObject {
     func fetchStatsForPokemon(pokemonID: Int,
                               completion: @escaping ((DetailedPokemonModel?) -> Void))
     {
-        Task(priority: .background) {
+        Task(priority: .high) {
             do {
                 dependencies
                     .apolloGQLServiceAdapter
@@ -56,7 +56,7 @@ class PokemonDataProvider: ObservableObject {
     
     // MARK: - Fetching transformed models from Apollo GQL Service Adapter
     func fetchAllPokemon() {
-        Task(priority: .background) {
+        Task(priority: .high) {
             do {
                 dependencies
                     .apolloGQLServiceAdapter
